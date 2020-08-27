@@ -28,6 +28,8 @@ import android.widget.ImageView;
 
 import androidx.viewpager.widget.PagerAdapter;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
@@ -137,7 +139,7 @@ public class BasePDFPagerAdapter extends PagerAdapter {
 
     @Override
     @SuppressWarnings("NewApi")
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(@NotNull ViewGroup container, int position) {
         View v = inflater.inflate(R.layout.view_pdf_page, container, false);
         ImageView iv = (ImageView) v.findViewById(R.id.imageView);
 
@@ -163,7 +165,7 @@ public class BasePDFPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
+    public void destroyItem(@NotNull ViewGroup container, int position, @NotNull Object object) {
         // bitmap.recycle() causes crashes if called here.
         // All bitmaps are recycled in close().
     }
@@ -189,7 +191,7 @@ public class BasePDFPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == (View) object;
+    public boolean isViewFromObject(@NotNull View view, @NotNull Object object) {
+        return view == object;
     }
 }

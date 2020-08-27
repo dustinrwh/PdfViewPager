@@ -75,8 +75,6 @@ public class DownloadFileUrlConnectionImpl implements DownloadFile {
                     fileOutput.close();
 
                     notifySuccessOnUiThread(url, destinationPath);
-                } catch (MalformedURLException e) {
-                    notifyFailureOnUiThread(e);
                 } catch (IOException e) {
                     notifyFailureOnUiThread(e);
                 }
@@ -123,7 +121,7 @@ public class DownloadFileUrlConnectionImpl implements DownloadFile {
         });
     }
 
-    protected class NullListener implements Listener {
+    protected static class NullListener implements Listener {
         public void onSuccess(String url, String destinationPath) {
             /* Empty */
         }

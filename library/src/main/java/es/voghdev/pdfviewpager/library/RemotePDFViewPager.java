@@ -110,22 +110,9 @@ public class RemotePDFViewPager extends ViewPager implements DownloadFile.Listen
         try {
             return super.onInterceptTouchEvent(ev);
         } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             return false;
         }
     }
 
-    public class NullListener implements DownloadFile.Listener {
-        public void onSuccess(String url, String destinationPath) {
-            /* Empty */
-        }
-
-        public void onFailure(Exception e) {
-            /* Empty */
-        }
-
-        public void onProgressUpdate(int progress, int total) {
-            /* Empty */
-        }
-    }
 }

@@ -23,6 +23,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
+import org.jetbrains.annotations.NotNull;
+
 import es.voghdev.pdfviewpager.library.R;
 import es.voghdev.pdfviewpager.library.subscaleview.ImageSource;
 import es.voghdev.pdfviewpager.library.subscaleview.SubsamplingScaleImageView;
@@ -45,7 +47,7 @@ public class PDFPagerAdapter extends BasePDFPagerAdapter {
 
     @Override
     @SuppressWarnings("NewApi")
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(@NotNull ViewGroup container, int position) {
         View v = inflater.inflate(R.layout.view_pdf_page, container, false);
         SubsamplingScaleImageView ssiv = v.findViewById(R.id.subsamplingImageView);
 
