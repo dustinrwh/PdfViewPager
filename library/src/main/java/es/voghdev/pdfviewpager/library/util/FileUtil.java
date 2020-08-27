@@ -41,6 +41,10 @@ public class FileUtil {
         return true;
     }
 
+    public static String fileNameHash(String url) {
+        return String.valueOf(url.hashCode());
+    }
+
     public static String extractFileNameFromURL(String url) {
         return url.substring(url.lastIndexOf('/') + 1);
     }
